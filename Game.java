@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Game {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Printer.Blue("Let's start the game");
         System.out.println("How many players will be playing?");
 
@@ -34,12 +34,7 @@ public class Game {
         }
 
         // let the moderator declare the winner
-        try {
-            modThread.join();
-        } catch (InterruptedException e) {
-
-            System.err.println("mod thread joining error");
-        }
+        modThread.join();
 
         Printer.Blue("Game has ended. Thanks for playing");
 
