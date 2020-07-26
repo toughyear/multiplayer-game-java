@@ -30,7 +30,7 @@ public class Moderator implements Runnable {
                 // generate a random number and add to the list
                 System.out.println("Waiting for Moderator");
                 try {
-                    Thread.sleep(0);
+                    Thread.sleep(3000);
                 } catch (InterruptedException e1) {
                     e1.printStackTrace();
                 }

@@ -10,7 +10,7 @@ public class Game {
         Scanner sc = new Scanner(System.in);
         int numberOfPlayers = sc.nextInt();
         // instantiate gamedata
-        final GameData game = new GameData(numberOfPlayers);
+        GameData game = GameData.getInstance(numberOfPlayers);
         sc.close();
 
         // create a single Moderator

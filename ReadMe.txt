@@ -40,13 +40,12 @@ EVALUATION CRITERIA
 
 6. DESIGN PATTERNS (at least 2)
 
+> Singleton Pattern - This pattern makes sure that only one object is created for the class.
+  This program uses this pattern to restrict creation of gamedata object, as multiple gamedata
+  object is not needed and can lead to undesirable effect. [wiki: https://en.wikipedia.org/wiki/Singleton_pattern] 
+
 > Monitor (synchronization) Pattern - This concurrent program uses the Monitor design pattern which 
 is a synchronization construct. It allows our player and moderator threads to run mutually exclusive.
 The threads have the the ability to wait (block) for a certain condition (verifying if the current number
 has been checked) to become false. [wiki: https://en.wikipedia.org/wiki/Monitor_(synchronization)] 
 
-> Double-checked Locking Pattern - This is used to reduce the overhead of acquiring a lock by testing
-the locking criterion (the "lock hint") before acquiring the lock. In this program, we use test whether 
-all threads have checked the latest number and only then we enter the lock. This helps in multi-threading
-optimization.
-[wiki: https://en.wikipedia.org/wiki/Double-checked_locking] 

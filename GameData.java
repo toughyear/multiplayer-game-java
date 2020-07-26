@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class GameData {
+
     // number of players
     int NOP;
     // boolean to check if game finished
@@ -20,7 +21,7 @@ public class GameData {
         // create instance of Random class
         Random rand = new Random();
 
-        // Generate random integers in range 0 to 999
+        // Generate random integers in range 0 to 50
         int rand_int = rand.nextInt(50);
 
         ModList.add(rand_int);
@@ -36,8 +37,11 @@ public class GameData {
         return true;
     }
 
-    // constructor
-    GameData(final int n) {
+    // create static variable Instance for Singleton class GameData
+    private static GameData gameInstance = null;
+
+    // private constructor restricted to this class itself
+    private GameData(int n) {
         // set the NOP to number of players
         this.NOP = n;
         // set checkedlist with memory
@@ -45,6 +49,14 @@ public class GameData {
         // set: all of the players have checked the last value to true
         Arrays.fill(checkedList, true);
 
+    }
+
+    // static method to create instance of Singleton class
+    public static GameData getInstance(int n) {
+        if (gameInstance == null)
+            gameInstance = new GameData(n);
+
+        return gameInstance;
     }
 
 }
